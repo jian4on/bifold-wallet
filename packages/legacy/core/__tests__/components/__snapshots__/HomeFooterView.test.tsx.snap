@@ -14,7 +14,7 @@ exports[`HomeFooterView Component Renders correctly with no notifications 1`] = 
       style={
         Object {
           "alignItems": "center",
-          "marginTop": 100,
+          "marginTop": 60,
         }
       }
     >
@@ -108,7 +108,7 @@ exports[`HomeFooterView Component Renders correctly with notifications 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "marginTop": 100,
+          "marginTop": 60,
         }
       }
     >

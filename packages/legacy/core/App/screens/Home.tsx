@@ -37,7 +37,7 @@ const Home: React.FC<HomeProps> = () => {
   const { ColorPallet } = useTheme()
   const [store, dispatch] = useStore()
   const { start } = useTour()
-  const [showNotifications, setShowNotifications] = useState(false)
+  const [showNotifications] = useState(true)
   const [showTourPopup, setShowTourPopup] = useState(false)
   const screenIsFocused = useIsFocused()
 

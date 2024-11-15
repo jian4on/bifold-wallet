@@ -1,9 +1,10 @@
-import { useTheme } from '@hyperledger/aries-bifold-core'
+import { useTheme } from '../../contexts/theme'
 import { useTranslation } from 'react-i18next'
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { NotificationReturnType } from '../../hooks/notifications'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+// import { testIdWithKey } from '../../utils/testable'
 
 export interface HomeHeaderViewProps {
   notifications: NotificationReturnType
@@ -11,7 +12,7 @@ export interface HomeHeaderViewProps {
   children?: any
 }
 
-const HomeHeaderView: React.FC<HomeHeaderViewProps> = ({ notifications, showNotifications, toggle, children }: HomeHeaderViewProps) => {
+const HomeHeaderView: React.FC<HomeHeaderViewProps> = ({ notifications, showNotifications, children }: HomeHeaderViewProps) => {
   const { t } = useTranslation()
   const { ColorPallet, TextTheme } = useTheme()
 
