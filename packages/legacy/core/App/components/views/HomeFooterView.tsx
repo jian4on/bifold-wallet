@@ -37,7 +37,7 @@ const HomeFooterView: React.FC<HomeFooterViewProps> = ({ children }) => {
 
     imageContainer: {
       alignItems: 'center',
-      marginTop: 100,
+      marginTop: 60,
     },
   })
 

@@ -37,12 +37,13 @@ const Home: React.FC<HomeProps> = () => {
   const { ColorPallet } = useTheme()
   const [store, dispatch] = useStore()
   const { start } = useTour()
+  const [showNotifications, setShowNotifications] = useState(false)
   const [showTourPopup, setShowTourPopup] = useState(false)
   const screenIsFocused = useIsFocused()
 
   const styles = StyleSheet.create({
     flatlist: {
-      marginBottom: 35,
+      marginBottom: 20,
     },
   })
 
@@ -130,7 +131,15 @@ const Home: React.FC<HomeProps> = () => {
         scrollEnabled={notifications?.length > 0 ? true : false}
         decelerationRate="fast"
         ListEmptyComponent={NoNewUpdates}
-        ListHeaderComponent={() => <HomeHeaderView />}
+        ListHeaderComponent={() => {
+          const homeHeaderViewProps = {
+            notifications: notifications,
+            showNotifications: showNotifications,
+          }
+          return (
+            <HomeHeaderView {...homeHeaderViewProps} />
+          )
+        }}
         ListFooterComponent={() => <HomeFooterView />}
         data={notifications}
         keyExtractor={(_, i) => i.toString()}
@@ -139,11 +148,11 @@ const Home: React.FC<HomeProps> = () => {
             style={{
               paddingHorizontal: 20,
               paddingTop: index === 0 ? 20 : 0,
-              paddingBottom: index === notifications.length - 1 ? 20 : 10,
+              paddingBottom: !showNotifications ? 0 : index === notifications.length - 1 ? 20 : 10,
               backgroundColor: ColorPallet.brand.secondaryBackground,
             }}
           >
-            {DisplayListItemType(item)}
+            { showNotifications && DisplayListItemType(item) }
           </View>
         )}
       />

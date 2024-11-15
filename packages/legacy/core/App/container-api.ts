@@ -22,6 +22,7 @@ import { PINExplainerProps } from './screens/PINExplainer'
 import { CredentialListFooterProps } from './types/credential-list-footer'
 import { ContactListItemProps } from './components/listItems/ContactListItem'
 import { ContactCredentialListItemProps } from './components/listItems/ContactCredentialListItem'
+import { HomeHeaderViewProps } from './components/views/HomeHeaderView'
 import { InlineErrorConfig } from './types/error'
 
 export type FN_ONBOARDING_DONE = (
@@ -181,7 +182,7 @@ export type TokenMapping = {
   [TOKENS.COMPONENT_CRED_LIST_HEADER_RIGHT]: React.FC
   [TOKENS.COMPONENT_CRED_LIST_OPTIONS]: React.FC
   [TOKENS.COMPONENT_CRED_LIST_FOOTER]: React.FC<CredentialListFooterProps>
-  [TOKENS.COMPONENT_HOME_HEADER]: React.FC
+  [TOKENS.COMPONENT_HOME_HEADER]: React.FC<HomeHeaderViewProps>
   [TOKENS.COMPONENT_HOME_NOTIFICATIONS_EMPTY_LIST]: React.FC
   [TOKENS.COMPONENT_HOME_FOOTER]: React.FC
   [TOKENS.COMPONENT_CRED_EMPTY_LIST]: React.FC
